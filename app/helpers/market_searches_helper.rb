@@ -1,0 +1,2 @@
+module MarketSearchesHelper
+end
