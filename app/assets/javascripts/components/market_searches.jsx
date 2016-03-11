@@ -1,4 +1,10 @@
 var Form = React.createClass({
+  componentDidMount: function(){
+
+  },
+  getCategories: function(){
+    $.get('localhost3000/api/v1/')
+  },
   render: function(){
     return (
       <div>
@@ -7,6 +13,8 @@ var Form = React.createClass({
         <p>Add as many search filters as you like.</p>
 
         <p>You can enter multiple search terms by separating them with commas (,).</p>
+
+        <SearchFilter />
       </div>
     )
   }
