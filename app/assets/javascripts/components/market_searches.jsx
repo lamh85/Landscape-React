@@ -3,7 +3,9 @@ var Form = React.createClass({
 
   },
   getCategories: function(){
-    $.get('localhost3000/api/v1/')
+    $.get('localhost3000/api/v1/', function(response){
+      console.log('response')
+    })
   },
   render: function(){
     return (
