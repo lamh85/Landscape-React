@@ -1,11 +1,20 @@
 var Form = React.createClass({
+  getInitialState: function(){
+    return {
+      categories: []
+    }
+  },
+  getCategories: function(){
+    componentThis = this;
+    $.get('http://localhost:3000/api/v1/market_searches/new', function(response){
+      componentThis.setState({categories: response.categories})
+    })
+  },
   componentDidMount: function(){
 
   },
-  getCategories: function(){
-    $.get('localhost3000/api/v1/', function(response){
-      console.log('response')
-    })
+  componentWillMount: function(){
+    this.getCategories();
   },
   render: function(){
     return (
@@ -15,6 +24,8 @@ var Form = React.createClass({
         <p>Add as many search filters as you like.</p>
 
         <p>You can enter multiple search terms by separating them with commas (,).</p>
+
+        <p>Hello world</p>
 
         <SearchFilter />
       </div>
