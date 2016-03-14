@@ -25,8 +25,11 @@ var Form = React.createClass({
 
         <p>You can enter multiple search terms by separating them with commas (,).</p>
 
-        <p>Hello world</p>
-
+        {
+          this.state.categories.map(function(name){
+            return <Category name={name} />;
+          })
+        }
         <SearchFilter />
       </div>
     )
@@ -52,3 +55,13 @@ var PropertyOption = React.createClass({
     )
   }
 });
+
+var Category = React.createClass({
+  render: function() {
+    return (
+      <span className="label label-info">
+        {this.props.name}
+      </span>
+    )
+  }
+})
