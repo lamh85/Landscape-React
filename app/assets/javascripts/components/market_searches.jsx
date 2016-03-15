@@ -1,13 +1,14 @@
 var Form = React.createClass({
   getInitialState: function(){
     return {
-      categories: []
+      marketCategories: [],
+      marketProperties: []
     }
   },
   getCategories: function(){
     componentThis = this;
     $.get('http://localhost:3000/api/v1/market_searches/new', function(response){
-      componentThis.setState({categories: response.categories})
+      componentThis.setState({marketCategories: response.categories})
     })
   },
   componentDidMount: function(){
