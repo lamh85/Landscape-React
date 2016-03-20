@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/lamh85/Landscape-React#readme",
   "dependencies": {
+    "babel": "^6.5.2",
     "react": "^0.14.7",
     "react-router": "^2.0.1"
   }
